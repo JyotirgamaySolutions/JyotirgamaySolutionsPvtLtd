@@ -66,7 +66,19 @@
 <body>
 
 <!-- page wrapper start -->
-
+<script>
+  document.getElementById("jbe-brochure-tab").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent page reload
+  
+      fetch("jbe-brochure.html")
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById("jbe-brochure-content").innerHTML = data;
+          })
+          .catch(error => console.error("Error loading the brochure:", error));
+  });
+  </script>
+  
 <div class="page-wrapper">
 
 <!--header start-->
@@ -171,6 +183,8 @@
                       </li>
                       <li><a href="Tax Automation.html">Tax Automation</a>
                     </li>
+                    <li><a href="jbe-brochure.html">JBE-Brochure</a>
+                  </li>
                     </ul>
                   </div>
 				  </li>
@@ -413,6 +427,18 @@
           </div>
         </div>
       </div>
+
+      <div class="section-title">
+        <h2 class="title">Consult and Find Best Business Solutions</h2>
+      </div>
+      <div class="text-center mt-3">
+        <a href="assets/download/jbe-brochure.pdf" download class="btn btn-theme">Download JBE Brochure</a>
+      </div>
+      
+      
+      
+        
+    </div>
     </div>
   </div>
 </section>
@@ -695,10 +721,6 @@
 </section> -->
 
 <!--blog end-->
-
-
-
-</div>
 
 <!--body content end--> 
 
